@@ -28,11 +28,13 @@ export const signup = async(req, res) => {
         
         const hashedPassword = await bcrypt.hash(password, 12);
                 
-        // const newUser = await User.create({ email, name: `${ firstname } ${ lastname }`, password: hashedPassword });
+        const newUser = await User.create({ email, name: `${ firstname } ${ lastname }`, password: hashedPassword });
 
         const token = jwt.sign({ email: newUser.email, id: newUser._id }, secret, { expiresIn: '1h'})
         
-        res.status(404).json({message: `Temporally disabled`});
+        const user = { name: newUser.name, email: newUser.email };
+        
+        res.status(404).json( token, user );
     } catch (error) {
         res.status(500).json({ message: `Server error, contact the administrator`});
     }
@@ -55,7 +57,7 @@ export const login = async(req, res) => {
 
         const user =  { name: isExistingUser.name, email: isExistingUser.email };
 
-        res.status(200).json({user, token});
+        res.status(200).json({ user, token});
         
     } catch (error) {
         res.status(500);
