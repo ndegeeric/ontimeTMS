@@ -1,0 +1,20 @@
+{
+  "short_name": "TeaRD",
+  "name": "Ontime Tea Record App",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "https://llamdodu.sirv.com/icodeThis/ontime.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#f3f3f3",
+  "background_color": "#07184f"
+}

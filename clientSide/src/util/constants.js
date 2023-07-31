@@ -1,0 +1,14 @@
+export const AUTH = 'AUTH';
+export const LOGOUT = 'LOGOUT';
+export const GETPICKS = 'GETPICKS';
+export const CREATE = 'CREATE';
+export const UPDATE = 'UPDATE';
+export const DELETE = 'DELETE';
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const FETCHEXPENSE  = 'FETCHEXPENSE';
+export const FETCHEXPENSES = 'FETCHEXPENSES';
+export const CREATEEXPENSE = 'CREATEEXPENSE';
+export const UPDATEEXPENSE = 'UPDATEEXPENSE';
+export const DELETEEXPENSE = 'DELETEEXPENSE';
+export const MONTHLYPICKS = 'MONTHLYPICKS';
+export const RANGEPICKS = 'RANGEPICKS';
