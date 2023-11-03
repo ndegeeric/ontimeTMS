@@ -15,7 +15,7 @@ const Auth = () => {
     const [isSignup, setIsSignup] = useState(false);
     const [formData, setFormData] = useState(initialState);
     const [errorHandler, setErrorHandler] = useState({ hasError: false, message: ""});
-    const [buttonActive, setButtonActive] = useState(true);
+    // const [buttonActive, setButtonActive] = useState(true);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -39,7 +39,7 @@ const Auth = () => {
         
         if (re.test(e.target.value)) {
             setErrorHandler({ hasError: false, message: '' });
-            setButtonActive(e.currentTarget.disabled = false);
+            // setButtonActive(e.currentTarget.disabled = false);
             return;
 
         } else {
