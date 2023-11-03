@@ -87,7 +87,7 @@ const Auth = () => {
                     <TextField required type="password" name="cpassword" placeholder='Confirm Password' onChange={(e)=> setFormData({ ...formData, cpassword: e.target.value})} variant='outlined' value={formData.cpassword} fullWidth />                
                 </> : ''
             }
-            <Button disabled={isSignup && buttonActive } variant='contained' onClick={handleSubmit} fullWidth>{ isSignup ? 'Save' : 'Log In'}</Button>
+            <Button variant='contained' onClick={handleSubmit} fullWidth>{ isSignup ? 'Save' : 'Log In'}</Button>
         </form>
         </Stack>
             <Button className='text-transform: capitalize' onClick={() => setIsSignup(prevIsSignup => !prevIsSignup)} >{
@@ -97,4 +97,4 @@ const Auth = () => {
   )
 }
 
-export default Auth
+export default Auth;
