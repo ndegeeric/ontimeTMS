@@ -10,6 +10,7 @@ const secret = process.env.SECRET;
 
 export const signup = async(req, res) => {
     const { email, firstname, lastname, password, cpassword } = req.body;
+    console.log('body:', req.body)
 
     try {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -30,11 +31,12 @@ export const signup = async(req, res) => {
                 
         const newUser = await User.create({ email, name: `${ firstname } ${ lastname }`, password: hashedPassword });
 
-        const token = jwt.sign({ email: newUser.email, id: newUser._id }, secret, { expiresIn: '1h'})
+        const token = jwt.sign({ email: newUser.email, id: newUser._id }, secret, { expiresIn: '1h'});
+
         
-        res.status(404).json( token);
+        res.status(200).json({ token, user: { name: newUser.name, email: newUser.email, _id: newUser._id }});
     } catch (error) {
-        res.status(500).json({ message: `Server error, contact the administrator`});
+        res.status(500).json({ message: `Server error: ${ error }`});
     }
 }
 

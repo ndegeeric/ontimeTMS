@@ -12,7 +12,6 @@ const ExpenseDetails = () => {
   const navigate = useNavigate();
   const [errorHandler, setErrorHandler] = useState({ hasError: false, message: ' '})
   const [ data ] = useSelector( state => state.expenses.filter(exp => exp._id === id ) );
-  // console.log(id);
 
   const handleEdit = (e) => {
     e.preventDefault();

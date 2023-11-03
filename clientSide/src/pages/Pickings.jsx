@@ -11,6 +11,7 @@ const Home = () => {
   const [errorHandler, setErrorHandler] = useState({ hasError: false, message: ''})
 
   const { picks } = useSelector(state => state);
+  // console.log(picks)
 
   useEffect(() => {
     dispatch(getPicks(setErrorHandler))

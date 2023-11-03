@@ -29,7 +29,6 @@ app.get('/', (req,res)=> {
 })
 
 const PORT = process.env.PORT || 5000;
+// console.log(PORT, process.env.CONNECTION_URL,process.env.SECRET)
 
-// app.listen(PORT, ()=> console.log(`server`))
-
-mongoose.connect(process.env.DATABASE_CONNECTION_URL,{ useUnifiedTopology: true, useNewUrlParser: true}).then(() => app.listen(PORT, () => console.log(`Server running on port: http://localhost:${ PORT }/api/rcd`))).catch((e) => console.log(e));
+mongoose.connect(process.env.DB_CONNECTION_URL,{ useUnifiedTopology: true, useNewUrlParser: true }).then(()=> console.log('Database connected successfully.')).then(() => app.listen(PORT, () => console.log(`Server running on port: http://localhost:${ PORT }/api/rcd`))).catch((e) => console.log(e));

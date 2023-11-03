@@ -3,4 +3,5 @@
 *.log
 .env
 *.http
+*.txt
 server/logs/reqLogs.txt
